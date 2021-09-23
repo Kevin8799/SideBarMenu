@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body
+{
+    min-height: 100vh;
+    background: url("draw/work.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+.sidebar
+{
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    position: fixed;
+    top:0;
+    left: -100%;
+    width: 260px;
+    height: 100vh;
+    overflow-y:auto;
+    transition: all 0.5s ease;
+    transition-property: left;
+    z-index: 10;
+}
+
+.sidebar.active
+{
+    left: 0;
+}
+
+
+.sidebar::-webkit-scrollbar
+{
+    display: none;
+}
+
+.sidebar .menu
+{
+    width: 100%;
+    margin-top:80px;
+    /* border: 1px solid black; */
+}
+
+.sidebar .menu .item
+{
+    /* border: 1px solid black; */
+    position: relative;
+    cursor: pointer;
+}
+
+.sidebar .menu .item a
+{
+    /* border: 1px solid black; */
+    color: whitesmoke;
+    font-size: 22px;
+    font-weight: 400;
+    text-decoration: none;
+    display: block;
+    padding: 5px 30px;
+    line-height: 80px;
+}
+
+.sidebar .menu .item a:hover
+{
+    background: rgba(148, 148, 236, 0.5);
+    transition: all 0.4s ease;
+}
+
+.sidebar .menu .item i
+{
+    font-size: 26px;
+    margin-right: 15px;
+    position: relative;
+    top:3px;
+    /* border: 1px solid black; */
+}
+
+.sidebar .menu .item i.arrow
+{
+    /* border: 1px solid black; */
+    position: absolute;
+    right: 0;
+    margin: 30px 5px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .menu .item .sub-menu
+{
+    background: rgba(255, 255, 255, 0.2);
+    display: none;
+}
+
+.sidebar .menu .item .sub-menu a 
+{
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.4;
+}
+
+
+.sidebar .menu .item .sub-menu a:hover
+{
+    opacity: 1;
+    font-weight: 500;
+}
+
+.rotate
+{
+    transform: rotate(90deg);
+}
+
+.close-btn
+{
+    color: whitesmoke;
+    position: absolute;
+    right: 0;
+    font-size: 30px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.menu-btn
+{
+    position: absolute;
+    color: whitesmoke;
+    font-size: 40px;
+    margin: 25px;
+    cursor: pointer;
+}
+
+.main
+{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.main .text-area
+{
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    z-index: 1;
+}
+
+
+.main .text-area h1
+{
+    color: rgba(255, 255, 255, 0.4);
+    display: inline;
+    font-size: 100px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 100px;
+    background-image: url("draw/water.png");
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    text-shadow: 0.08em 0.05em rgba(0, 0, 0, 0.363);
+    background-clip: text;
+    -webkit-background-clip: text;
+    /* -webkit-text-stroke: 3px rgba(8, 7, 7, 0.514); */
+    animation-name: wave;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.main .text-area #text2
+{
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform:none;
+}
+
+
+@keyframes wave
+{
+    from{
+        background-position-x:0;
+        background-position-y:0;
+    }
+    to
+    {
+        background-position-x:1000px;
+        background-position-y:0;
+    }
+}
+
+
+/*----------------User-html----------------*/
+
+
+.user-area
+{
+    position: absolute;
+    left: 260px;
+    width: calc(100% - 260px);
+    height: 100vh;
+    background: white;
+}
+
+.user-area .user-title
+{
+    border: 1px solid black;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(100, 148, 237,0.8);
+}
+
+.user-area .user-title i
+{
+    float: left;
+    font-size: 80px;
+    margin: 10px 25px;
+    text-shadow: 0.06em 0.01em rgba(0, 0, 0, 0.404);
+}
+
+.user-area .user-title h1
+{
+    font-size: 2.5em;
+    font-family: 400;
+    position: absolute;
+    top: 25px;
+    left: 150px;
+    letter-spacing: 5px;
+    text-shadow: 0.09em 0.07em rgba(0, 0, 0, 0.404);
+}
+
+.user-area .user-content
+{
+    background: white;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.user-area .user-content .head
+{
+    flex: 1;
+    width: 200px;
+    height: 150px;
+    /* border: 1px solid black; */
+    position: absolute;
+    top:130px;
+    left: 60px;
+    
+}
+
+.user-area .user-content .head .head-image
+{
+    width: 300;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.user-area .user-content .head .head-image img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.user-area .user-content .head #head-file
+{
+   margin-top:10px;
+}
+
+.user-area .user-content .user-news
+{
+    flex:2;
+    /* background: rgb(97, 32, 218); */
+    position: absolute;
+    left: 300px;
+    width: 75%;
+    height: 100vh;
+    /* display: flex;
+    flex-direction: column;
+     */
+}
+
+
+.user-area .user-content .user-news div
+{
+    /* border: 1px solid black; */
+    flex:1;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.user-area .user-content .user-news div label
+{
+    margin-left: 30px;
+    font-size: 30px;
+    /* pointer-events: none;
+    border-bottom: 1px solid #9ea5b8; */
+}
+
+.user-area .user-content .user-news div input
+{
+    margin-left: 30px;
+    font-size: 30px;
+    width: 70%;
+    height: 60px;
+    border: none;
+    outline: none;
+    color: #595f6e;
+    border-bottom: 1px solid #9ea5b8;
+}
+
+
+
+.user-area .user-content .user-news div .birthday
+{
+    border: 1px solid black;
+    width:200px;
+    height: 50px;
+    border-radius: 10px;
+    margin-left: 5px;
+    font-size: 15px;
+}
+
+.user-area .user-content .user-news .btn
+{
+    /* border: 1px solid black; */
+    position: absolute;
+    right: 30%;
+    bottom: 25%;
+    /* border-radius: 10px; */
+    cursor: pointer;
+}
+
+.user-area .user-content .user-news #cancel-btn
+{
+    /* border: 1px solid black;
+    width: 100px;
+    height: 50px; */
+    position: absolute;
+    right: 15%;
+    bottom: 25%;
+}
+
+.user-area .user-content .user-news .btn a
+{
+    border: 1px solid black;
+    position:relative;
+    width: 100px;
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: rgb(235, 222, 173);
+    box-shadow: 0.4em 0.2em rgba(0, 0, 0, 0.356);
+}
+
+.user-area .user-content .user-news .btn a::before,
+.user-area .user-content .user-news .btn a::after
+{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: red;
+    transition: all 0.3s ease;
+}
+
+.user-area .user-content .user-news .btn a:hover::before
+{
+    inset: -3px;
+}
+
+.user-area .user-content .user-news .btn a:hover::after
+{
+    inset: -3px;
+    filter: blur(10px);
+}
+
+
+.user-area .user-content .user-news .btn a span
+{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(100, 148, 237,1);
+    z-index: 10;
+    text-decoration: none;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.user-area .user-content .user-news .btn a span:hover
+{
+    color: rgba(255, 255, 255, 1);
+}
+
+
+
